@@ -1,13 +1,11 @@
-NAME = Human_Nature
+NAME = Karen
 VERMILION_RED=\033[1;31m
 AZURE_BLUE=\033[1;34m
 GOLD_COLOR=\033[38;5;220m
 GREEN=\033[0;32m
 RESET=\033[0m
 SRC_FILES = main.cpp \
-			HumanA.cpp \
-			Weapon.cpp \
-			HumanB.cpp \
+			Harl.cpp \
 
 OBJECTS = $(SRC_FILES:.cpp=.o)
 CC = c++
@@ -19,9 +17,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 all: $(NAME)  
 
 $(NAME) : $(OBJECTS) $(INCLUDE) Makefile
-	@echo "$(GOLD_COLOR)Compiling Human_Nature...$(RESET)"
+	@echo "$(GOLD_COLOR)Compiling Karen...$(RESET)"
 	$(CC) $(CFLAGS) -o $(NAME)  $(OBJECTS) 
-	@echo "$(GOLD_COLOR)Human_Nature compiled ! :)$(RESET)"
+	@echo "$(GOLD_COLOR)Karen compiled ! :)$(RESET)"
 
 clean:
 	@echo "$(AZURE_BLUE)Cleaning in progress...$(RESET)"

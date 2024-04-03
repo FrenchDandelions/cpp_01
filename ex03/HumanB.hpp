@@ -4,7 +4,7 @@ class HumanB
 {
     private:
 
-        Weapon Weapon;
+        Weapon *Weap;
 
         std::string Name;
     
@@ -12,20 +12,16 @@ class HumanB
 
         HumanB(std::string Name);
 
-        HumanB(std::string Name, std::string weapon);
+        HumanB(std::string Name, Weapon &weapon);
 
         ~HumanB();
 
         void setName(std::string &Name);
 
-        std::string getName();
+        const std::string &getName();
+
+        void setWeapon(Weapon &wep);
+
+        void attack();
+
 };
-
-HumanB::HumanB(std::string name)
-{
-}
-
-HumanB::~HumanB()
-{
-}
-
