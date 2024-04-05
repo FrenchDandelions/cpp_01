@@ -9,6 +9,10 @@ SRC_FILES = main.cpp \
 			Weapon.cpp \
 			HumanB.cpp \
 
+INCLUDE = Weapon.hpp \
+			HumanA.hpp \
+			HumanB.hpp \
+
 OBJECTS = $(SRC_FILES:.cpp=.o)
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
