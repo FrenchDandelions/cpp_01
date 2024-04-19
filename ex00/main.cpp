@@ -1,15 +1,15 @@
 #include "Zombie.hpp"
 
-int main(void){
-
+int main(void)
+{
     Zombie Undead("Birdie");
-
-    Undead.randomChump("Random");
+    randomChump("Random");
 
     Zombie Undead2;
 
-    Zombie *Me = Undead.newZombie("Wanderer");
-
+    Zombie *Me = newZombie("Wanderer");
+    if(!Me)
+        std::cout << "Error new" << std::endl;
     Me->announce();
 
     delete Me;

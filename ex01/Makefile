@@ -6,6 +6,7 @@ GREEN=\033[0;32m
 RESET=\033[0m
 SRC_FILES = main.cpp \
 			Zombie.cpp \
+			zombieHorde.cpp \
 
 INCLUDE = Zombie.hpp
 

@@ -6,6 +6,8 @@ GREEN=\033[0;32m
 RESET=\033[0m
 SRC_FILES = main.cpp \
 			Zombie.cpp \
+			newZombie.cpp \
+			randomChump.cpp \
 
 INCLUDE = Zombie.hpp
 

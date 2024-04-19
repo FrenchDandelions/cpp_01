@@ -18,20 +18,22 @@ void File::truncate()
         outfile.open(this->outfile.c_str(), std::ofstream::trunc);
         if(outfile.is_open())
         {
+            std::string line = "";
             while(1)
             {
-                std::string line;
-                if(!getline(stream, line))
+                std::string line_to_concatenate;
+                if(!getline(stream, line_to_concatenate))
                     break;
-                size_t pos = 0;
-                while((pos = line.find(this->to_find, pos)) != std::string::npos)
-                {
-                    line.erase(pos, this->to_find.length());
-                    line.insert(pos, to_replace_with);
-                    pos += this->to_find.length();
-                }
-                outfile << line << std::endl;
+                line += line_to_concatenate.append("\n");
             }
+            size_t pos = 0;
+            while((pos = line.find(this->to_find, pos)) != std::string::npos)
+            {
+                line.erase(pos, this->to_find.length());
+                line.insert(pos, to_replace_with);
+                pos += this->to_find.length();
+            }
+            outfile << line << std::endl;
             outfile.close();
         }
         else
@@ -45,5 +47,4 @@ void File::truncate()
 
 File::~File()
 {
-    // std::cout << this->outfile << std::endl;
 }

@@ -31,17 +31,15 @@ void Harl::falseAlarm(void){
     std::cout << "*Karen's on another one of her complaint sprees! Just nod and smile, folks, let the drama unfold.*" << std::endl;
 }
 
-void Harl::complain(std::string level){
-    std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+void Harl::complain(std::string level)
+{
+    std::string tab[5] = {"DEBUG", "INFO", "WARNING", "ERROR", level};
     void (Harl::*func[5])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::falseAlarm};
-    int i;
-    for(i = 0; i < 4; i++){
+    for(int i = 0; i < 5; i++){
         if(tab[i] == level)
         {
             (this->*func[i])();
             break;
         }
     }
-    if(i == 4)
-        (this->*func[i])();
 }

@@ -25,13 +25,9 @@ void Harl::error(void){
     
 }
 
-void Harl::falseAlarm(void){
-    std::cout << "*Karen's on another one of her complaint sprees! Just nod and smile, folks, let the drama unfold.*" << std::endl;
-}
-
 void Harl::complain(std::string level){
     std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*func[5])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::falseAlarm};
+    void (Harl::*func[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     int i;
     for (i = 0; i < 4; i++)
     {
