@@ -2,10 +2,16 @@
 
 File::File(char **argv)
 {
-    this->infile = argv[1];
-    this->to_find = argv[2];
-    this->to_replace_with = argv[3];
-    this->outfile = this->infile + ".replace";
+    if(!argv[1] || !argv[2] || !argv[3])
+        std::cout << "Error, nothing was set since there wasn't 4 arguments passed in the array" << std::endl;
+    else
+    {
+        this->infile = argv[1];
+        this->to_find = argv[2];
+        this->to_replace_with = argv[3];
+        this->outfile = this->infile + ".replace";
+    }
+    
 }
 
 void File::truncate()
@@ -24,7 +30,9 @@ void File::truncate()
                 std::string line_to_concatenate;
                 if(!getline(stream, line_to_concatenate))
                     break;
-                line += line_to_concatenate.append("\n");
+                if(line.size() > 0)
+                    line.append("\n");
+                line += line_to_concatenate;
             }
             size_t pos = 0;
             while((pos = line.find(this->to_find, pos)) != std::string::npos)

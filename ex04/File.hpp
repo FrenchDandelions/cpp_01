@@ -1,3 +1,6 @@
+#ifndef FILE_HPP
+# define FILE_HPP
+
 #include <iostream>
 #include <fstream>
 
@@ -14,3 +17,5 @@ class File
         ~File();
         void truncate();
 };
+
+#endif
